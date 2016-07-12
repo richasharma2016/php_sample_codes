@@ -7,7 +7,6 @@ mysql_select_db("test") or die(mysql_error());
 $age_with_max_count=mysql_query("select age_as_integer,count(age_as_integer) as count_age from member group by age_as_integer order by count_age desc limit 1") or die(mysql_error());
 $resultant_row = mysql_fetch_array($age_with_max_count) or die(mysql_error());
 $resultant_age=$resultant_row['age_as_integer'];
-
-echo "Age with most number of members ".$resultant_age;
+echo "Age with most number of members : ".$resultant_age;
 
 ?>
